@@ -4,7 +4,7 @@
 body{
   font-family: "Hanken Grotesk", sans-serif;
   color: rgb(34, 33, 33);
-    background-color: #1b2827;
+    background-color: #edf0f7;
 }
 #container{
     min-width: 900px;
@@ -13,35 +13,35 @@ body{
     padding: 20px;
 }
 h1{
-  font-family: "Yuyu Short", sans-serif;
-  font-size: 70px;
-  color: rgb(97, 67, 89);
+    font-family: "Yuyu Short", sans-serif;
+    font-size: 90px;
+    color: rgb(96, 16, 28);
+    margin-top: -8px;
 }
 h2{
-    font-size: 24px;
-    color: #f8f7f7;
+    font-size: 26px;
+    color: #6b728d;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: -10px;
 }
 main{
     display: flex;
     gap: 0;
-    border: 10px solid #098f91;
+    margin-top: -60px;
 }
 main section{
     flex: 1;
     min-width: 0;
     padding: 20px;
-    background: #1b2827;
-}
-main section + section{
-    border-left: 6px solid#740909;
+    background: #edf0f7;
 }
 main h2{
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 22px;
+  font-family: "Yuyu Short", sans-serif;
+    font-size: 60px;
     margin: 0 0 16px;
     padding-bottom: 12px;
     border-bottom: 2px solid #740909;
-    color: rgb(165, 211, 207);
+    color: rgb(96, 16, 28); 
     text-align: center;
 }
 main ul{
@@ -57,11 +57,11 @@ main ul::after {
     right: -16px;
     bottom: -10px;
     height: 10px;
-    background-color: #8f5151;
+    background-color: #736e70;
     box-shadow: 0 5px 0 #740909;
 }
 main li{
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 main li:last-child{
         margin-bottom: 0;
@@ -70,70 +70,128 @@ main a{
     display: block;
     background-color: #5a2d30 ;
     color: #f6f3f3;
-    border: 2px solid #cabbbb;
+    border: 2px solid #803f43;
     border-radius: 3px 7px 7px 3px;
     padding: 10px 12px;
     font-size: 18px;
     text-decoration: none;
-    /* transition: transform 0.3s ease; */
     position: relative;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 main a:hover, main a:focus-visible {
-    /* transform: translateX(5px); */
     transform: scale(1.06);
     box-shadow: 0 6px 10px rgba(62, 53, 46, 0.25) ;
 }
 main li:nth-child(2) a{
     background-color: #4e3d4a;
+    border: 2px solid #24111f;
 }
 main li:nth-child(3) a{
     background-color: #53594c;
+    border: 2px solid #727e64;
 }
 main li:nth-child(4) a{
     background-color: #6b728d;
+    border: 2px solid #333644;
+
 }
 #banner {
     width: 100%;
     height: 250px;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow: visible;
+    margin-top: -25px;
 }
-#banner img{
+#banner .illustration {
 display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
+width: 200px;
+height: 300px;
+object-fit: contain;
 object-position: center ;
+filter: none;
+transition: filter 0.5s ease;
+cursor: pointer;
 }
-.bookmark{
-    width: 65px;
-    height: 160px;    
-    background-color: #6b728d;
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        50% 80%,
-        0 100%
-    ) ;
-    transform-origin: center top;
-    animation: swing 3s ease-in-out infinite;
-}
-@keyframes swing{
-    0%, 100%{
-        transform: rotate(-10deg);
-    }
-    50%{
-        transform: rotate(10deg);
-    }
-}
-.star {
-    font-size: 75px;
-    color: #6b728d;
+#banner .portrait {
+    display: block;
+    width: 240px;
+    height: 350px;
+    object-fit: contain;
+    flex-shrink: 0;
+    order: 1;
+    margin-left: auto;
+    transform: translateX(150px) scale(1.5);
+    transform-origin: right bottom;
+    filter: none;
+    transition: none;
     cursor: pointer;
-    transition: transform 0.4s ease, color 0.4 ease;
 }
-.star:hover{
-    transform: rotate(25deg) scale(1.2);
-    color: #cabbbb;
+#banner .illustration:hover {
+    filter: brightness(0) saturate(100%)
+            invert(15%) sepia(35%) saturate(2200%)
+            hue-rotate(310deg) brightness(75%) contrast(100%);
+}
+#banner .squiggle {
+    order: 2;
+    width: 300px;
+    height: 700px;
+    align-self: flex-end;
+    object-fit: contain;
+    animation: squiggle-stretch 5s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+#banner .star {
+    cursor: pointer;
+    transition: transform 0.4s ease, filter 0.5s ease;
+    transform: translateX(120px);
+}
+#banner .star:hover {
+    transform: translateX(120px) rotate(20deg) scale(1.5);
+}
+#banner .long-spiral {
+    animation: spiral-stretch 5s ease-in-out infinite;
+}
+@keyframes spiral-stretch {
+    0%, 100% {
+        transform: translateX(30px) scale(1.2) scaleX(1) scaleY(1);
+    }
+
+    50% {
+        transform: translateX(30px) scale(1.2) scaleX(1.4) scaleY(1);
+    }
+}
+@keyframes squiggle-stretch {
+    0%, 100% {
+        transform: scaleX(1) scaleY(1);
+    }
+
+    50% {
+        transform: scaleX(0.95) scaleY(1.08);
+    }
+}
+
+footer {
+    padding: 30px 20px 20px;
+    text-align: center;
+}
+footer a {
+    display: inline-block;
+    background-color: #4b5361bd;
+    color: #edf0f7;
+    padding: 12px 80px;
+    border: 2px solid #60101c00;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus-visible {
+    background-color: #edf0f7;
+    color: #60101c;
+    border: 2px solid #60101c;
 }
