@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Open console to see functionality of the code</h2>
+    <script>
+       // This Script is capitalizing the first letter of each word in the sentance //
+
+       //Sequence// 
+        let sentance = "my name is zofia and I love to travel";
+        let result =""
+        //Loop//
+        for(let i = 0; i < sentance.length; i++) {
+            let letter = sentance.charAt(i);
+        //Selection//
+        if(i == 0 || sentance.charAt(i - 1) == " ") {
+            result += letter.toUpperCase();
+        } else {
+            result += letter
+        }
+        }
+        console.log(result);
+    </script>
+</body>
+</html>
