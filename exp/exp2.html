@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2 id="destination"></h2>
+    <p id="message"></p>
+    <h3 id="more-heading"></h3>
+    <ul id="more-cities"></ul>
+
+    <script>
+     /*this program asks users what kind of trip they would like to go on out of three general experience categories, picks a random city that matches, shows it on the page, and lists other matching cities to consider*/
+       var answer = prompt('What kind of trip do you want: party, history, or art?', '');
+       var partyCities = ['Ibiza', 'Miami', 'Berlin', 'Las Vegas', 'Rio de Janiero'];
+       var historyCities = ['Athens', 'Kyoto', 'Istanbul', 'Cairo', 'Prague'];
+       var artCities = ['Paris', 'Florence', 'Amsterdam', 'NYC', 'Madrid'];
+
+       function randomInt(min, max){
+            return Math.floor( (max - min + 1) * Math.random() ) 
+       }
+       function pickCity(cities){
+            return cities[randomInt(0, cities.length - 1)];
+       }
+       function showTrip(cities) {
+            var city = pickCity(cities);
+            document.querySelector('#destination').innerHTML = `Your next trip: ${city}!`;
+            document.querySelector('#message').innerHTML = `Pack your bags, you're going to ${city}.`;
+            document.querySelector('#more-heading').innerHTML = 'Other cities to consider:';
+
+            var listText = '';
+            for (var i = 0; i < cities.length; i++){
+                if (cities[i] !== city){
+                    listText += `<li>${cities[i]}</li>`;
+                }
+            }
+            document.querySelector('#more-cities').innerHTML = listText;
+       }
+
+       function planTrip(tripType){
+            if (tripType === null){
+                document.querySelector('#destination').innerHTML = 'No trip today!';
+            }
+            else{
+                var type = tripType.toLowerCase();
+                if (type === 'party'){
+                    showTrip(partyCities);
+                }
+                else if (type === 'history'){
+                    showTrip(historyCities);
+                }
+                else if (type === 'art'){
+                    showTrip(artCities);
+                }
+                else{
+                document.querySelector('#destination').innerHTML = "Hm I don't know that kind of trip";
+                document.querySelector('#message').innerHTML = 'Reload the page and type party, history, or art.';
+                }
+            }
+       }
+       planTrip(answer);
+
+    </script>
+</body>
+</html>
