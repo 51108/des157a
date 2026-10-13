@@ -13,12 +13,13 @@
     <ul id="more-cities"></ul>
 
     <script>
-     /*this program asks users what kind of trip they would like to go on out of three general experience categories, picks a random city that matches, shows it on the page, and lists other matching cities to consider*/
-       var answer = prompt('What kind of trip do you want: party, history, or art?', '');
+    /*this program asks users what kind of trip they would like to go on out of three general experience categories, picks a random city that matches, shows it on the page, and lists other matching cities to consider*/
+        
+        var answer = prompt('What kind of trip do you want: party, history, or art?', '');
        var partyCities = ['Ibiza', 'Miami', 'Berlin', 'Las Vegas', 'Rio de Janiero'];
        var historyCities = ['Athens', 'Kyoto', 'Istanbul', 'Cairo', 'Prague'];
        var artCities = ['Paris', 'Florence', 'Amsterdam', 'NYC', 'Madrid'];
-
+        
        function randomInt(min, max){
             return Math.floor( (max - min + 1) * Math.random() ) 
        }
