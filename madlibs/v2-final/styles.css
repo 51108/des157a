@@ -1,0 +1,177 @@
+/* page */
+body {
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 1.5rem 2rem;
+    border: 3px solid #7a2e1d;
+    border-radius: 8px;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #3b2a1a;
+    background-color: #f4e9d8;
+}
+
+/* title */
+h1 {
+    margin: 0;
+    font-family: 'Almendra', serif;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #7a2e1d;
+}
+
+/* subtitle and story heading */
+h2 {
+    margin: 0.25rem 0 0;
+    font-family: 'Almendra', serif;
+    font-weight: normal;
+    color: #3b2a1a;
+}
+
+/* header */
+header {
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* back to portal link in the top left */
+header a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #7a2e1d;
+}
+
+/* layout */
+main {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+form,
+section {
+    flex: 1;
+}
+
+/* form with two columns */
+form {
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: repeat(10, auto);
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 0.2rem 6rem;
+}
+
+/* dragon under the left column */
+form img {
+    grid-column: 1;
+    grid-row: 11;
+    justify-self: center;
+    width: 40%;
+    height: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* word boxes */
+input {
+    padding: 0.3rem 1rem;
+    border: 2px solid #c9b18f;
+    border-radius: 4px;
+    font: inherit;
+    background-color: #fffaf2;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+input[type='text'],
+input[type='number'] {
+    margin-bottom: 0.25rem;
+}
+
+/* change the input when you click into it */
+input[type='text']:focus,
+input[type='number']:focus {
+    border-color: #7a2e1d;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* buttons */
+input[type='submit'],
+section a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #7a2e1d;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* buttons lift up on hover */
+input[type='submit']:hover,
+section a:hover {
+    background-color: #5c2114;
+    transform: translateY(-2px);
+}
+
+/* tell my tale button in the right column */
+input[type='submit'] {
+    grid-column: 2;
+    grid-row: 11;
+    justify-self: center;
+    align-self: center;
+}
+
+/* story */
+section {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+}
+
+/* story text lines up on the left */
+section p {
+    margin: 0 0 0.5rem;
+    text-align: left;
+}
+
+/* user's words in red */
+section strong {
+    color: #7a2e1d;
+}
+
+/* hide and show the form and story */
+.hidden {
+    display: none;
+}
+
+.showing {
+    animation: fade-in 1s ease-in;
+}
+
+/* fade in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
