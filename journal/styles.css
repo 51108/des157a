@@ -94,3 +94,16 @@ footer a:focus-visible {
     background-color: #edf0f7;
     color: #60101c;
 }
+figure {
+    margin: 0 0 1.5rem;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+figcaption {
+    margin-top: 0.5rem;
+    color: #4e3d4a;
+    font-size: 0.9rem;
+}
