@@ -145,15 +145,24 @@ section h2 {
     font-size: 2rem;
 }
 
-/* story text lines up on the left */
+/* story text lines up on the left
+   bigger and heavier so the thin font is easier to read (peer review feedback) */
 section p {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
     text-align: left;
 }
 
 /* user's words in red */
 section strong {
     color: #7a2e1d;
+}
+
+/* error message when the number is too small */
+.error {
+    color: #c0392b;
 }
 
 /* hide and show the form and story */
