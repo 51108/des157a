@@ -153,6 +153,13 @@ section {
     padding: 0 6vw;
 }
 
+/* zoom in / zoom out sections are taller than the screen so a quick
+   trackpad scroll can't skip past the 3s zoom before it finishes
+   (peer review: scrolling felt too sensitive) */
+.zoom {
+    min-height: 150vh;
+}
+
 header {
     align-self: center;
     text-align: center;
@@ -197,15 +204,23 @@ footer a {
 
 /* likes and dislikes */
 
-/* solid background covers the crowd photo */
+/* solid background covers the crowd photo.
+   twice as tall as the screen so the card stays up for a whole
+   extra screen of scrolling (peer review: profiles were easy to skip) */
 .profile {
+    justify-content: flex-start;
     align-items: stretch;
+    min-height: 200vh;
     padding: 4vh 8vw;
     background: radial-gradient(circle at center, #6e1a14, #2a0705);
 }
 
-/* like on the left, dislike on the right */
+/* like on the left, dislike on the right.
+   sticky keeps the card pinned near the top of the screen while
+   the rest of the tall section scrolls underneath it */
 .profile article {
+    position: sticky;
+    top: 4vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 5vw;

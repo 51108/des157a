@@ -34,8 +34,10 @@
         resetPagePosition();
 
         window.addEventListener('scroll', function () {
-            // middle of the screen
-            pagetop = window.scrollY + window.innerHeight / 2;
+            // a quarter of the way down the screen, so the card shows up as it
+            // reaches the top and leaves once it has mostly scrolled away
+            // (was the middle, which left an empty red box on screen)
+            pagetop = window.scrollY + window.innerHeight / 4;
 
             // while instead of if so big jumps still catch up
             while (pagetop > sectionTops[counter]) {
@@ -86,7 +88,7 @@
                 sectionTops.push(Math.floor(eachSection.getBoundingClientRect().top) + window.scrollY);
             });
 
-            const pagePosition = window.scrollY + window.innerHeight / 2;
+            const pagePosition = window.scrollY + window.innerHeight / 4;
             counter = 0;
             sectionTops.forEach(function (eachSection) {
                 if (pagePosition > eachSection) { counter++; }
