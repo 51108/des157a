@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Acquisition | Game On!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- title, how to play, and game info -->
+    <header>
+        <h1>The Acquisition</h1>
+        <ul class="how">
+            <li>roll to bid.</li>
+            <li>pass to hang your lot.</li>
+        </ul>
+        <p>a game of risk for two curators. Push your luck, curate your wall</p>
+        <ul class="meta">
+            <li>game on! — studio 3</li>
+            <li>turn 03 &nbsp; lot 014</li>
+            <li>first wall to 30 wins</li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- curator 01's wall. "active" = it's their turn -->
+        <article id="wall-one" class="wall active">
+            <h2>curator 01</h2>
+            <p class="score">14</p>
+            <ul class="details">
+                <li>/ 30 pts</li>
+                <li>2 of 6 hung</li>
+                <li class="status">bidding now</li>
+            </ul>
+            <ul class="frames">
+                <li class="hung">lot 01 — untitled</li>
+                <li class="hung">lot 02 — untitled</li>
+                <li>lot 03</li>
+                <li>lot 04</li>
+                <li>lot 05</li>
+                <li>lot 06</li>
+            </ul>
+            <p class="note">each frame = 5 pts</p>
+        </article>
+
+        <!-- the auction block: dice, this turn's bid, rules and buttons -->
+        <section id="auction">
+            <h2>auction block</h2>
+
+            <!-- #game = where the dice rolls show up -->
+            <div id="game">
+                <img src="images/die-four.svg" alt="die showing four" width="100" height="100">
+                <img src="images/die-three.svg" alt="die showing three" width="100" height="100">
+                <p>4 + 3</p>
+                <p class="bid">+07 <span>this turn</span></p>
+            </div>
+
+            <ul class="rules">
+                <li><strong>1 — forgery.</strong> lose this turn's bids.</li>
+                <li><strong>●● — scandal.</strong> lose the whole collection.</li>
+            </ul>
+
+            <!-- #actions = where the player's buttons show up -->
+            <div id="actions">
+                <button id="bid">bid again <span>→</span></button>
+                <button id="hang">hang it <span>→</span></button>
+            </div>
+        </section>
+
+        <!-- curator 02's wall. no "active" class = waiting -->
+        <article id="wall-two" class="wall">
+            <h2>curator 02</h2>
+            <p class="score">09</p>
+            <ul class="details">
+                <li>/ 30 pts</li>
+                <li>1 of 6 hung</li>
+                <li class="status">waiting</li>
+            </ul>
+            <ul class="frames">
+                <li class="hung">lot 01 — untitled</li>
+                <li>lot 02</li>
+                <li>lot 03</li>
+                <li>lot 04</li>
+                <li>lot 05</li>
+                <li>lot 06</li>
+            </ul>
+            <p class="note">each frame = 5 pts</p>
+        </article>
+    </main>
+
+    <!-- bottom rule. sound credits will go here later -->
+    <footer></footer>
+
+    <!-- start screen overlay. #gamecontrol and #startgame from game of pig.
+         change class="hidden" to class="showing" to see and style it -->
+    <section id="gamecontrol" class="hidden">
+        <article>
+            <h2>The auction is about to begin</h2>
+            <p>two curators. one auction. first wall to 30 wins.</p>
+            <p>roll to bid. hang your art before a forgery ruins it.</p>
+            <button id="startgame">start auction <span>→</span></button>
+        </article>
+    </section>
+</body>
+
+</html>
